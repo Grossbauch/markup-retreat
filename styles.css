@@ -1,1 +1,48 @@
-/* Пиши стили тут */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-image: url('img/star-empty.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.1s ease;
+}
+
+.star-rating label:active {
+    transform: scale(0.9);
+}
+
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+    background-image: url('img/star.png');
+}
+
+.star-rating input:checked~label {
+    background-image: url('img/star.png');
+}
+
+.star-rating label:hover~input:checked~label,
+.star-rating input:checked~label:hover,
+.star-rating input:checked~label:hover~label {
+    background-image: url('img/star.png');
+}
